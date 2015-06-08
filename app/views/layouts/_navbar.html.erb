@@ -9,16 +9,16 @@
     <a class="navbar-brand" href="/">Storedom</a>
   </div>
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
     <ul class="nav navbar-nav">
+      <% if @current_store %>
       <li>
-        <a href="/">Items</a>
+        <%= link_to "Items", store_items_path(store: @current_store.slug) %>
       </li>
       <li>
-        <a href="/users">Users</a>
+        <%= link_to "Orders", store_orders_path(store: @current_store.slug) %>
       </li>
-      <li>
-        <a href="/orders">Orders</a>
-      </li>
+      <% end %>
     </ul>
   </div>
 </nav>
