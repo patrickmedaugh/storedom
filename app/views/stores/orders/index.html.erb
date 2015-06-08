@@ -1,0 +1,8 @@
+<div class="container">
+<h1>Welcome to <%= current_store.name %>!</h1>
+<% @orders.each do |order| %>
+<%= link_to order.id, store_order_path(order, store: current_store.slug) %>
+<%= order.amount %>
+<%= order.user_id %>
+<% end %>
+</div>
